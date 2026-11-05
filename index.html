@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>EPA | Plataforma de estudio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="EPA Estudio"><span class="brand-mark">E</span><span>EPA <small>ACADEMIA</small></span></a>
+      <div class="top-actions"><span class="live-dot"></span><span>Tu espacio de aprendizaje</span></div>
+    </header>
+
+    <section id="home" class="hero panel">
+      <div class="eyebrow"><span class="eyebrow-line"></span> PREPÁRATE · PRACTICA · SUPÉRATE</div>
+      <h1>Aprende hoy.<br><span>Destaca siempre.</span></h1>
+      <p class="hero-copy">Pon a prueba tus conocimientos de EPA con una experiencia interactiva, dinámica y a tu ritmo.</p>
+      <div class="stats">
+        <div><strong id="totalQuestions">40</strong><span>Preguntas</span></div>
+        <div><strong>04</strong><span>Áreas de estudio</span></div>
+        <div><strong>∞</strong><span>Oportunidades</span></div>
+      </div>
+      <div class="setup-grid">
+        <div class="setup-card">
+          <label for="mode">Modalidad</label>
+          <select id="mode"><option value="study">Modo estudio</option><option value="exam">Modo examen</option></select>
+        </div>
+        <div class="setup-card">
+          <label for="count">Cantidad de preguntas</label>
+          <select id="count"><option value="all">Todas (40)</option><option value="10">10 preguntas</option><option value="20">20 preguntas</option></select>
+        </div>
+        <div class="setup-card">
+          <label for="duration">Tiempo del examen</label>
+          <select id="duration"><option value="15">15 minutos</option><option value="30" selected>30 minutos</option><option value="45">45 minutos</option><option value="60">60 minutos</option></select>
+        </div>
+      </div>
+      <div class="hero-actions"><button id="startBtn" class="btn btn-primary">Comenzar a estudiar <span>→</span></button><button id="soundToggle" class="btn btn-ghost" aria-pressed="true">🔊 Sonido activado</button></div>
+      <p class="fine-print">En modo estudio recibirás retroalimentación inmediata. En modo examen verás tus resultados al finalizar.</p>
+    </section>
+
+    <section id="quiz" class="quiz-view hidden">
+      <div class="quiz-heading">
+        <div><div class="eyebrow">SESIÓN DE APRENDIZAJE</div><h2 id="sessionTitle">Modo estudio</h2></div>
+        <div class="timer-box"><span>TIEMPO RESTANTE</span><strong id="timer">30:00</strong></div>
+      </div>
+      <div class="progress-wrap"><div class="progress-meta"><span id="progressText">Pregunta 1 de 40</span><span id="progressPercent">0%</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+      <article class="question-card panel">
+        <div class="question-top"><span id="questionNumber" class="question-number">PREGUNTA 01</span><span id="modePill" class="mode-pill">ESTUDIO</span></div>
+        <h3 id="questionText">Pregunta</h3>
+        <p class="choose-hint" id="chooseHint">Selecciona la respuesta correcta</p>
+        <div id="options" class="options"></div>
+        <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+        <div class="question-footer"><button id="exitBtn" class="btn btn-ghost">← Salir</button><button id="nextBtn" class="btn btn-primary" disabled>Siguiente <span>→</span></button></div>
+      </article>
+      <div class="quiz-footnote"><span>✦</span> La práctica constante hace la diferencia.</div>
+    </section>
+
+    <section id="results" class="results panel hidden">
+      <div class="result-icon" id="resultIcon">✦</div><div class="eyebrow">SESIÓN COMPLETADA</div>
+      <h2 id="resultTitle">¡Buen trabajo!</h2><p id="resultMessage">Estos son tus resultados.</p>
+      <div class="score-ring"><strong id="score">0%</strong><span>DOMINIO</span></div>
+      <div class="result-stats"><div><strong id="correctCount">0</strong><span>Correctas</span></div><div><strong id="wrongCount">0</strong><span>Incorrectas</span></div><div><strong id="timeUsed">00:00</strong><span>Tiempo usado</span></div></div>
+      <div id="review" class="review-list"></div>
+      <div class="result-actions"><button id="retryBtn" class="btn btn-primary">Volver a intentarlo ↻</button><button id="homeBtn" class="btn btn-ghost">Ir al inicio</button></div>
+    </section>
+    <footer>EPA ACADEMIA <span>·</span> Aprende a tu ritmo</footer>
+  </main>
+  <div id="flash" class="flash" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
